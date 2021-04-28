@@ -1,9 +1,43 @@
-h1 {
+body {
   font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1.5;
+}
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.nav-item {
+  padding: 0 1.5rem;
+}
+.nav-link {
+  font-size: 1.2rem;
+}
+.navbar {
+  padding-bottom: 4.5rem;
 }
 #title {
   background-color: #ff4c68;
+}
+.title-container {
+  padding: 3% 10%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.5;
+  color: white;
+  padding: 5%;
+  padding-left: 2.5%;
+}
+.btn {
+  padding: 1.5% 3%;
+  margin: 3%;
+}
+.fab {
+  margin-right: 0.5rem;
+}
+.phone-img {
+  width: 60%;
+  transform: rotate(10deg);
 }
