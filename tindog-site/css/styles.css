@@ -41,3 +41,24 @@ h1 {
   width: 60%;
   transform: rotate(10deg);
 }
+#features {
+  text-align: center;
+  padding: 10% 10%;
+}
+.feature-col {
+  padding: 4% 5%;
+}
+.feature-icons {
+  color: #ef8172;
+  padding-bottom: 1.5rem;
+}
+.feature-icons:hover {
+  color: #ff4c68;
+}
+.feature-header {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.feature-desc {
+  color: #8f8f8f;
+}
