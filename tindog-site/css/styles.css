@@ -43,7 +43,7 @@ h1 {
 }
 #features {
   text-align: center;
-  padding: 10% 10%;
+  padding: 10%;
 }
 .feature-col {
   padding: 4% 5%;
@@ -61,4 +61,30 @@ h1 {
 }
 .feature-desc {
   color: #8f8f8f;
+}
+#testimonials {
+  padding: 2%;
+  background-color: #ef8172;
+  color: #fff;
+  text-align: center;
+}
+.testimonial-items {
+  padding: 8%;
+}
+.testimonial-text {
+  font-weight: bold;
+}
+.testimonial-img {
+  width: 10%;
+  border-radius: 100%;
+  padding: 2%;
+}
+#press {
+  background-color: #ef8172;
+  padding: 0 5% 5%;
+  text-align: center;
+}
+.press-logo {
+  width: 15%;
+  margin: 0 2rem;
 }
