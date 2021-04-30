@@ -17,6 +17,7 @@ body {
 }
 #title {
   background-color: #ff4c68;
+  padding-bottom: 10%;
 }
 .title-container {
   padding: 3% 10%;
@@ -40,10 +41,15 @@ h1 {
 .phone-img {
   width: 60%;
   transform: rotate(10deg);
+  padding: 3% 0 0 3%;
+  position: absolute;
 }
 #features {
+  background-color: #fff;
   text-align: center;
   padding: 10%;
+  position: relative;
+  z-index: 1;
 }
 .feature-col {
   padding: 4% 5%;
@@ -87,4 +93,21 @@ h1 {
 .press-logo {
   width: 15%;
   margin: 0 2rem;
+}
+#pricing {
+  padding: 5% 10%;
+}
+.pricing-card {
+  text-align: center;
+  margin: 15%;
+}
+.card-header {
+  background-color: #ff4c68;
+}
+.card-title {
+  font-weight: bold;
+  color: #fff;
+}
+.pricing-title {
+  font-weight: bold;
 }
