@@ -23,11 +23,19 @@ function playSound(key) {
       break;
   }
 }
+function buttonAnimation(pressedKey) {
+  document.querySelector("." + pressedKey).classList.add("pressed");
+  setTimeout(function () {
+    document.querySelector("." + pressedKey).classList.remove("pressed");
+  }, 100);
+}
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
     playSound(this.innerHTML);
+    buttonAnimation(this.innerHTML);
   });
 }
 document.addEventListener("keydown", function (event) {
   playSound(event.key);
+  buttonAnimation(event.key);
 });
