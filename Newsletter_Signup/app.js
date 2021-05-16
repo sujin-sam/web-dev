@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const https = require('https');
 
-const port = 3100;
 const app = express();
+var port = process.env.PORT || 3100;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -12,8 +12,7 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/signup.html');
 });
 
-app.use('/css', express.static(__dirname + '/css'));
-app.use('/images', express.static(__dirname + '/images'));
+app.use(express.static(__dirname + '/public'));
 
 app.post('/', (req, res) => {
 	const data = {
@@ -33,7 +32,7 @@ app.post('/', (req, res) => {
 	const url = 'https://us1.api.mailchimp.com/3.0/lists/5cb64a38e2';
 	const options = {
 		method: 'POST',
-		auth: 'key:a59ef55c1df559909be33523d0fc2fb64-us1'
+		auth: 'key:59ef55c1df559909be33523d0fc2fb64-us1'
 	};
 
 	const request = https.request(url, options, (api_response) => {
