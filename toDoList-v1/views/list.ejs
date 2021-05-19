@@ -1,0 +1,28 @@
+<%- include('header') %>
+
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %>
+        </h1>
+    </div>
+    <div class="box">
+        <% for(var i=0; i<itemList.length; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= itemList[i] %>
+                </p>
+            </div>
+            <% } %>
+
+                <% if(listTitle=="Work" ){ %>
+                    <form class="item" action="/work" method="post">
+                        <% } else { %>
+                            <form class="item" action="/" method="post">
+                                <% } %>
+                                    <input type="text" name="toDo" id="addToDo" placeholder="new item">
+                                    <button type="submit">+</button>
+                            </form>
+    </div>
+
+    <%- include('footer') %>
