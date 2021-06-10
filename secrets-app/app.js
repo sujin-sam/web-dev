@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const encrypt = require('mongoose-encryption');
 const md5 = require('md5');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const port = process.env.PORT || 3100;
@@ -52,10 +53,17 @@ app
 		res.render('register');
 	})
 	.post((req, res) => {
-		const newUser = new UserColl({ email: req.body.email, password: md5(req.body.password) });
-		newUser.save((err) => {
-			if (err) console.log(err);
-			else res.render('secrets');
+		//const newUser = new UserColl({ email: req.body.email, password: md5(req.body.password) });
+
+		bcrypt.hash(req.body.password, 10, (err, hashedPwd) => {
+			if (err) res.send('an error occurred: ' + err);
+			else {
+				const newUser = new UserColl({ email: req.body.email, password: hashedPwd });
+				newUser.save((err) => {
+					if (err) console.log(err);
+					else res.render('secrets');
+				});
+			}
 		});
 	});
 
@@ -69,8 +77,12 @@ app
 			if (err) console.log(err);
 			else {
 				if (doc) {
-					if (doc.password == md5(req.body.password)) res.render('secrets');
-					else res.send('Incorrect email or password');
+					//if (doc.password == md5(req.body.password)) res.render('secrets');
+					bcrypt.compare(req.body.password, doc.password, function(err, result) {
+						if (err) res.send('an error occured: ' + err);
+						else if (result == true) res.render('secrets');
+						else if (result == false) res.send('Incorrect email or password');
+					});
 				}
 			}
 		});
